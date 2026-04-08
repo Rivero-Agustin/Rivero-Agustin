@@ -44,7 +44,8 @@ Desarrollo integral de un sistema para la lectura, procesamiento y visualizació
 Digitalización y optimización de flujos de trabajo corporativos para la industria siderúrgica, reemplazando procesos manuales por aplicaciones interactivas.
 
 > **Demostración del sistema:**
-> *[Arrastrá y soltá acá tu GIF/Video de la app de Tenaris]*
+
+https://github.com/user-attachments/assets/d17b6c04-20ba-4f73-99f9-e7b0c55a43d2
 
 **Arquitectura y Logros:**
 * Diseño de aplicaciones de gestión interactivas conectadas a bases de datos en SharePoint.
