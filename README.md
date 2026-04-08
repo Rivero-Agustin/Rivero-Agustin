@@ -45,7 +45,9 @@ Digitalización y optimización de flujos de trabajo corporativos para la indust
 
 > **Demostración del sistema:**
 
-https://github.com/user-attachments/assets/d17b6c04-20ba-4f73-99f9-e7b0c55a43d2
+https://github.com/user-attachments/assets/b325a40e-e106-4f77-8c36-d33c9d8504b9
+
+https://github.com/user-attachments/assets/1a67bf90-ad86-4fd8-8b2e-f56c55461df7
 
 **Arquitectura y Logros:**
 * Diseño de aplicaciones de gestión interactivas conectadas a bases de datos en SharePoint.
