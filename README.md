@@ -15,7 +15,7 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 
 > **Demostración de Interfaz y Conectividad IoT (ESP32-P4 con pantalla táctil):**
 > 
-https://github.com/user-attachments/assets/324bd5b2-f8c7-4a46-bcdd-0532d09458d6
+> https://github.com/user-attachments/assets/324bd5b2-f8c7-4a46-bcdd-0532d09458d6
 > 
 > *👆 En pantalla: UI táctil LVGL (arriba-izq), Consola de debug (abajo) y cliente Web Bluetooth (arriba-der).*
 > * **Gestión de Memoria y Red:** Secuencia de booteo con recuperación de variables de entorno (NVS) y conexión Wi-Fi automática con escaneo de redes asíncrono sin bloquear la interfaz gráfica.
