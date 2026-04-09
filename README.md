@@ -54,9 +54,9 @@ Digitalización y optimización de flujos de trabajo corporativos para la indust
 https://github.com/user-attachments/assets/885ce026-786b-4f30-be76-d8af930617bd
 
 > *👆 En pantalla: Recorrido integral (en velocidad 2x) por la arquitectura front-end del sistema.*
-> * **Estructuración de Datos:** Diseño de navegación modular que permite al usuario transicionar fluidamente entre su perfil y múltiples categorías de inventario complejo.*
-> * **Manejo de UI/UX Corporativo:** Implementación de vistas limpias para grandes volúmenes de información, priorizando la legibilidad.*
-> * **Lógica de Filtrado:** Uso de filtros dinámicos en tiempo real para optimizar la búsqueda y manipulación de datos provenientes de la base documental.*
+> * **Estructuración de Datos:** Diseño de navegación modular que permite al usuario transicionar fluidamente entre su perfil y múltiples categorías de inventario complejo.
+> * **Manejo de UI/UX Corporativo:** Implementación de vistas limpias para grandes volúmenes de información, priorizando la legibilidad.
+> * **Lógica de Filtrado:** Uso de filtros dinámicos en tiempo real para optimizar la búsqueda y manipulación de datos provenientes de la base documental.
 
 > **Demostración del sistema (Gestión de Repuestos y Mantenimiento):**
 
