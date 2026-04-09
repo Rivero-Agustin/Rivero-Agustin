@@ -29,7 +29,13 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 Desarrollo integral de un sistema para la lectura, procesamiento y visualización de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel. 
 
 > **Demostración del flujo de datos:**
-> *[Arrastrá y soltá acá tu GIF/Video de la pantalla de Next.js y la consola con el Arduino]*
+
+https://github.com/user-attachments/assets/6464c240-882c-43ea-876d-9d2d3b87a54d
+
+> *👆 En pantalla: Layout completo del sistema (Next.js a la izq., Consola a la der., Arduino abajo).*
+> * **Hardware Awareness:** Detección en tiempo real de la conexión/desconexión de la placa física.*
+> * **Lógica Dinámica:** Ejecución de 3 ciclos de medición simulada. El árbol de decisión del flujo se adapta automáticamente según los parámetros de configuración iniciales.*
+> * **Manejo de Archivos:** Procesamiento de los datos adquiridos y renderizado final de un reporte técnico exportable en PDF.*
 
 **Arquitectura y Logros:**
 * Creación de un puente de comunicación serial robusto entre el firmware del microcontrolador y el entorno Node.js/Electron.
@@ -43,11 +49,26 @@ Desarrollo integral de un sistema para la lectura, procesamiento y visualizació
 
 Digitalización y optimización de flujos de trabajo corporativos para la industria siderúrgica, reemplazando procesos manuales por aplicaciones interactivas.
 
-> **Demostración del sistema:**
+> **Demostración del sistema (Gestión de Herramental):**
 
-https://github.com/user-attachments/assets/b325a40e-e106-4f77-8c36-d33c9d8504b9
+https://github.com/user-attachments/assets/885ce026-786b-4f30-be76-d8af930617bd
 
-https://github.com/user-attachments/assets/1a67bf90-ad86-4fd8-8b2e-f56c55461df7
+> *👆 En pantalla: Recorrido integral (en velocidad 2x) por la arquitectura front-end del sistema.*
+> * **Estructuración de Datos:** Diseño de navegación modular que permite al usuario transicionar fluidamente entre su perfil y múltiples categorías de inventario complejo.*
+> * **Manejo de UI/UX Corporativo:** Implementación de vistas limpias para grandes volúmenes de información, priorizando la legibilidad.*
+> * **Lógica de Filtrado:** Uso de filtros dinámicos en tiempo real para optimizar la búsqueda y manipulación de datos provenientes de la base documental.*
+
+> **Demostración del sistema (Gestión de Repuestos y Mantenimiento):**
+
+https://github.com/user-attachments/assets/3bf55eeb-3ebf-47e0-8daf-1c5f8260c7cf
+
+> **Demostración del sistema (Gestión de Repuestos y Mantenimiento):**
+> *[Enlace al Video 2 de Tenaris]*
+> 
+> *👆 En pantalla: Aplicación transaccional enfocada en la trazabilidad de inventario y control de activos físicos.*
+> * **Gestión de Accesos (RBAC):** Implementación de un sistema de roles y permisos para garantizar la seguridad y controlar quién puede visualizar o alterar información crítica.
+> * **Métricas Financieras y de Stock:** Diseño de paneles interactivos con filtros avanzados para generar resúmenes dinámicos (agrupación por sector, ubicación y cálculo de costos totales en tiempo real).
+> * **Lógica Transaccional (CRUD):** Flujo de registro de movimientos de stock (altas, bajas y transferencias), asegurando la trazabilidad absoluta y manteniendo un historial auditable de las operaciones.
 
 **Arquitectura y Logros:**
 * Diseño de aplicaciones de gestión interactivas conectadas a bases de datos en SharePoint.
