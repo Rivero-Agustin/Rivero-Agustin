@@ -14,6 +14,7 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 Diseño e integración de interfaces gráficas nativas para microcontroladores (familia ESP32) en entornos industriales.
 
 > **Demostración de Interfaz y Conectividad IoT (ESP32-P4 con pantalla táctil):**
+> 
 https://github.com/user-attachments/assets/324bd5b2-f8c7-4a46-bcdd-0532d09458d6
 > 
 > *👆 En pantalla: UI táctil LVGL (arriba-izq), Consola de debug (abajo) y cliente Web Bluetooth (arriba-der).*
