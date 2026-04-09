@@ -69,9 +69,9 @@ https://github.com/user-attachments/assets/885ce026-786b-4f30-be76-d8af930617bd
 https://github.com/user-attachments/assets/3bf55eeb-3ebf-47e0-8daf-1c5f8260c7cf
 
 > *👆 En pantalla: Aplicación transaccional enfocada en la trazabilidad de inventario y control de activos físicos.*
-> * **Gestión de Accesos (RBAC):** Implementación de un sistema de roles y permisos para garantizar la seguridad y controlar quién puede visualizar o alterar información crítica.
+> * **Gestión de Accesos:** Implementación de un sistema de roles y permisos para garantizar la seguridad y controlar quién puede visualizar o alterar información crítica.
 > * **Métricas Financieras y de Stock:** Diseño de paneles interactivos con filtros avanzados para generar resúmenes dinámicos (agrupación por sector, ubicación y cálculo de costos totales en tiempo real).
-> * **Lógica Transaccional (CRUD):** Flujo de registro de movimientos de stock, asegurando la trazabilidad absoluta y manteniendo un historial auditable de las operaciones.
+> * **Lógica Transaccional:** Flujo de registro de movimientos de stock, asegurando la trazabilidad absoluta y manteniendo un historial auditable de las operaciones.
 
 **Arquitectura y Logros:**
 * Diseño de aplicaciones de gestión interactivas conectadas a bases de datos en SharePoint.
