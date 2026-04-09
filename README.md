@@ -14,7 +14,8 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 Diseño e integración de interfaces gráficas nativas para microcontroladores (familia ESP32) en entornos industriales.
 
 > **Demostración de la interfaz:**
-> *[Arrastrá y soltá acá tu GIF/Video de la pantalla del proyecto de TecnoCAS]*
+
+
 
 **Arquitectura y Logros:**
 * Implementación de una arquitectura orientada a eventos para renderizar componentes visuales dinámicos (ej. notificaciones asíncronas).
@@ -26,7 +27,7 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 ## ⚡ 2. Sistema de Adquisición de Datos en Tiempo Real (End-to-End)
 *Tecnologías: Next.js, Electron.js, C/C++, Interfaz Serial*
 
-Desarrollo integral de un sistema para la lectura, procesamiento y visualización de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel. 
+Desarrollo integral de un sistema que define el flujo de trabajo según normas de ensayo, el cual lee, procesa y genera informes de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel. 
 
 > **Demostración del flujo de datos:**
 
@@ -58,13 +59,10 @@ https://github.com/user-attachments/assets/885ce026-786b-4f30-be76-d8af930617bd
 > * **Manejo de UI/UX Corporativo:** Implementación de vistas limpias para grandes volúmenes de información, priorizando la legibilidad.
 > * **Lógica de Filtrado:** Uso de filtros dinámicos en tiempo real para optimizar la búsqueda y manipulación de datos provenientes de la base documental.
 
-> **Demostración del sistema (Gestión de Repuestos y Mantenimiento):**
+> **Demostración del sistema (Gestión de Inventario):**
 
 https://github.com/user-attachments/assets/3bf55eeb-3ebf-47e0-8daf-1c5f8260c7cf
 
-> **Demostración del sistema (Gestión de Repuestos y Mantenimiento):**
-> *[Enlace al Video 2 de Tenaris]*
-> 
 > *👆 En pantalla: Aplicación transaccional enfocada en la trazabilidad de inventario y control de activos físicos.*
 > * **Gestión de Accesos (RBAC):** Implementación de un sistema de roles y permisos para garantizar la seguridad y controlar quién puede visualizar o alterar información crítica.
 > * **Métricas Financieras y de Stock:** Diseño de paneles interactivos con filtros avanzados para generar resúmenes dinámicos (agrupación por sector, ubicación y cálculo de costos totales en tiempo real).
