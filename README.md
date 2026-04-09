@@ -33,9 +33,9 @@ Desarrollo integral de un sistema para la lectura, procesamiento y visualizació
 https://github.com/user-attachments/assets/6464c240-882c-43ea-876d-9d2d3b87a54d
 
 > *👆 En pantalla: Layout completo del sistema (Next.js a la izq., Consola a la der., Arduino abajo).*
-> * **Hardware Awareness:** Detección en tiempo real de la conexión/desconexión de la placa física.*
-> * **Lógica Dinámica:** Ejecución de 3 ciclos de medición simulada. El árbol de decisión del flujo se adapta automáticamente según los parámetros de configuración iniciales.*
-> * **Manejo de Archivos:** Procesamiento de los datos adquiridos y renderizado final de un reporte técnico exportable en PDF.*
+> * **Hardware Awareness:** Detección en tiempo real de la conexión/desconexión de la placa física.
+> * **Lógica Dinámica:** Ejecución de 3 ciclos de medición simulada. El árbol de decisión del flujo se adapta automáticamente según los parámetros de configuración iniciales.
+> * **Manejo de Archivos:** Procesamiento de los datos adquiridos y renderizado final de un reporte técnico exportable en PDF.
 
 **Arquitectura y Logros:**
 * Creación de un puente de comunicación serial robusto entre el firmware del microcontrolador y el entorno Node.js/Electron.
