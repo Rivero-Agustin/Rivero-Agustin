@@ -14,7 +14,7 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 Diseño e integración de interfaces gráficas nativas para microcontroladores (familia ESP32) en entornos industriales.
 
 > **Demostración de Interfaz y Conectividad IoT (ESP32-P4 con pantalla táctil):**
-https://github.com/user-attachments/assets/79a1f508-d801-42cf-80c0-5373fe870063
+https://github.com/user-attachments/assets/324bd5b2-f8c7-4a46-bcdd-0532d09458d6
 > 
 > *👆 En pantalla: UI táctil LVGL (arriba-izq), Consola de debug (abajo) y cliente Web Bluetooth (arriba-der).*
 > * **Gestión de Memoria y Red:** Secuencia de booteo con recuperación de variables de entorno (NVS) y conexión Wi-Fi automática con escaneo de redes asíncrono sin bloquear la interfaz gráfica.
@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/79a1f508-d801-42cf-80c0-5373fe870063
 Desarrollo integral de un sistema que define el flujo de trabajo según normas de ensayo, el cual lee, procesa y genera informes de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel.
 
 > **Demostración del flujo de datos:**
-> *[https://github.com/user-attachments/assets/6464c240-882c-43ea-876d-9d2d3b87a54d]*
+https://github.com/user-attachments/assets/65a54fdf-90c3-4da0-abf5-b1c1f1200f7c
 > 
 > *👆 En pantalla: Layout completo del sistema (App de escritorio con Next.js a la izq., Consola a la der., Arduino abajo).*
 > * **Hardware Awareness:** Detección en tiempo real de la conexión/desconexión de la placa física.
@@ -54,7 +54,7 @@ Desarrollo integral de un sistema que define el flujo de trabajo según normas d
 Digitalización y optimización de flujos de trabajo corporativos para la industria siderúrgica, reemplazando procesos manuales por aplicaciones interactivas.
 
 > **Demostración del sistema (Gestión de Herramental):**
-> *[https://github.com/user-attachments/assets/885ce026-786b-4f30-be76-d8af930617bd]*
+https://github.com/user-attachments/assets/770dc185-0d1f-432b-946a-7efe2f8fdf05
 > 
 > *👆 En pantalla: Recorrido integral (en velocidad 2x) por la arquitectura front-end del sistema.*
 > * **Estructuración de Datos:** Diseño de navegación modular que permite al usuario transicionar fluidamente entre su perfil y múltiples categorías de inventario complejo.
@@ -62,7 +62,7 @@ Digitalización y optimización de flujos de trabajo corporativos para la indust
 > * **Lógica de Filtrado:** Uso de filtros dinámicos en tiempo real para optimizar la búsqueda y manipulación de datos provenientes de la base documental.
 
 > **Demostración del sistema (Gestión de Inventario):**
-> *[https://github.com/user-attachments/assets/3bf55eeb-3ebf-47e0-8daf-1c5f8260c7cf]*
+https://github.com/user-attachments/assets/0946468b-e0d4-498b-b362-3be363607da8
 > 
 > *👆 En pantalla: Aplicación transaccional enfocada en la trazabilidad de inventario y control de activos físicos.*
 > * **Gestión de Accesos (RBAC):** Implementación de un sistema de roles y permisos para garantizar la seguridad y controlar quién puede visualizar o alterar información crítica.
