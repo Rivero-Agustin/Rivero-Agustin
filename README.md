@@ -35,6 +35,7 @@ https://github.com/user-attachments/assets/324bd5b2-f8c7-4a46-bcdd-0532d09458d6
 Desarrollo integral de un sistema que define el flujo de trabajo según normas de ensayo, el cual lee, procesa y genera informes de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel.
 
 > **Demostración del flujo de datos:**
+> 
 https://github.com/user-attachments/assets/65a54fdf-90c3-4da0-abf5-b1c1f1200f7c
 > 
 > *👆 En pantalla: Layout completo del sistema (App de escritorio con Next.js a la izq., Consola a la der., Arduino abajo).*
@@ -55,6 +56,7 @@ https://github.com/user-attachments/assets/65a54fdf-90c3-4da0-abf5-b1c1f1200f7c
 Digitalización y optimización de flujos de trabajo corporativos para la industria siderúrgica, reemplazando procesos manuales por aplicaciones interactivas.
 
 > **Demostración del sistema (Gestión de Herramental):**
+> 
 https://github.com/user-attachments/assets/770dc185-0d1f-432b-946a-7efe2f8fdf05
 > 
 > *👆 En pantalla: Recorrido integral (en velocidad 2x) por la arquitectura front-end del sistema.*
@@ -63,6 +65,7 @@ https://github.com/user-attachments/assets/770dc185-0d1f-432b-946a-7efe2f8fdf05
 > * **Lógica de Filtrado:** Uso de filtros dinámicos en tiempo real para optimizar la búsqueda y manipulación de datos provenientes de la base documental.
 
 > **Demostración del sistema (Gestión de Inventario):**
+> 
 https://github.com/user-attachments/assets/0946468b-e0d4-498b-b362-3be363607da8
 > 
 > *👆 En pantalla: Aplicación transaccional enfocada en la trazabilidad de inventario y control de activos físicos.*
