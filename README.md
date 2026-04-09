@@ -13,9 +13,14 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 
 Diseño e integración de interfaces gráficas nativas para microcontroladores (familia ESP32) en entornos industriales.
 
-> **Demostración de la interfaz:**
+> **Demostración de Interfaz y Conectividad IoT (ESP32-P4):**
 
+https://github.com/user-attachments/assets/73d16119-5ce9-4c0a-a165-f54a0c9f41f1
 
+> *👆 En pantalla: UI táctil LVGL (arriba-izq), Consola de debug (abajo) y cliente Web Bluetooth (arriba-der).*
+> * **Gestión de Memoria y Red:** Secuencia de booteo con recuperación de variables de entorno (NVS) y conexión Wi-Fi automática con escaneo de redes asíncrono sin bloquear la interfaz gráfica.
+> * **Conectividad BLE (Web Bluetooth):** Habilitación del periférico Bluetooth Low Energy bajo demanda para establecer un canal de validación bidireccional con un cliente web externo.
+> * **Seguridad y Control de Estados:** Autenticación local en el dispositivo (Superusuario) para la gestión de permisos, y accionamiento seguro de bloqueos físicos del sistema.
 
 **Arquitectura y Logros:**
 * Implementación de una arquitectura orientada a eventos para renderizar componentes visuales dinámicos (ej. notificaciones asíncronas).
