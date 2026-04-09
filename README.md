@@ -80,4 +80,4 @@ Digitalización y optimización de flujos de trabajo corporativos para la indust
 
 ---
 
-📫 **¿Conectamos?** Encontrame en [linkedin.com/in/agustin-rivero-](https://www.linkedin.com/in/agustin-rivero-/)
+📫 **¿Conectamos?** Encontrame en [linkedin.com/in/agustin-rivero-/](https://www.linkedin.com/in/agustin-rivero-/)
