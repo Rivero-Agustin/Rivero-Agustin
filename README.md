@@ -30,7 +30,7 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 ---
 
 ## ⚡ 2. Sistema de Adquisición de Datos en Tiempo Real (End-to-End)
-*Tecnologías: Next.js, Electron.js, C/C++, Interfaz Serial*
+*Tecnologías: Next.js, React, Electron.js, C/C++, Interfaz Serial*
 
 Desarrollo integral de un sistema que define el flujo de trabajo según normas de ensayo, el cual lee, procesa y genera informes de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel.
 
