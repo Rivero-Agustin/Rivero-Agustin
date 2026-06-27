@@ -19,21 +19,23 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 
 Diseño e integración de interfaces gráficas nativas para microcontroladores (familia ESP32) en entornos industriales.
 
-> **Demostración de Interfaz y Conectividad IoT (ESP32-P4 con pantalla táctil):**
-> 
-> https://github.com/user-attachments/assets/324bd5b2-f8c7-4a46-bcdd-0532d09458d6
+> **Demostración de Interfaz, Control de Hardware y Conectividad IoT (ESP32-P4 con pantalla táctil):**
 >
-> https://github.com/user-attachments/assets/8e793bd7-6163-46b8-b777-37f531e37833
+> https://github.com/user-attachments/assets/e358323d-e6ba-4f4c-9428-898d0fdcbe95
 > 
-> *👆 En pantalla: UI táctil LVGL (arriba-izq), Consola de debug (abajo) y cliente Web Bluetooth (arriba-der).*
-> * **Gestión de Memoria y Red:** Secuencia de booteo con recuperación de variables de entorno (NVS) y conexión Wi-Fi automática con escaneo de redes asíncrono sin bloquear la interfaz gráfica.
-> * **Conectividad BLE (Web Bluetooth):** Habilitación del periférico Bluetooth Low Energy bajo demanda para establecer un canal de validación bidireccional con un cliente web externo.
-> * **Seguridad y Control de Estados:** Autenticación local en el dispositivo (Superusuario) para la gestión de permisos, y accionamiento seguro de bloqueos físicos del sistema.
+> *👆 En pantalla: UI táctil LVGL y hardware de potencia (arriba-izq), Webhook API / cliente web BLE (arriba-der) y consola de debug (abajo).*
+> **Flujo de la Demostración Técnica:**
+> * **Inicialización y Conectividad:** Secuencia de booteo con conexión Wi-Fi, sincronización de reloj en tiempo real (RTC) mediante protocolo **SNTP**, y transmisión inicial de telemetría global hacia la nube vía HTTP POST. Exploración de menú mostrando el escaneo asíncrono de redes Wi-Fi sin bloquear el renderizado gráfico.
+> * **Validación BLE (Web Bluetooth):** Emparejamiento temporal bajo demanda. El dispositivo es detectado y validado de forma segura desde un cliente web externo a través de Bluetooth Low Energy.
+> * **Seguridad y Motor de Reglas:** Autenticación local mediante contraseña de Superusuario (con manejo de intentos fallidos). El sistema evalúa estados concurrentes: al tener una "tarea" activa, el firmware bloquea los intentos estándar de apertura de hardware, requiriendo un escalamiento de privilegios (Superusuario) para forzar la acción.
+> * **Control de Periféricos y Telemetría en Tiempo Real:** Gestión de relés físicos e indicadores LED (Rojo/Verde) para representar bloqueos y accesos. El firmware sigue una arquitectura orientada a eventos, donde cada cambio de estado físico dispara instantáneamente un Webhook (HTTP POST) para mantener sincronizada la base de datos externa.
 
-**Arquitectura y Logros:**
-* Implementación de una arquitectura orientada a eventos para renderizar componentes visuales dinámicos (ej. notificaciones asíncronas).
-* Gestión eficiente de la memoria y los recursos del hardware mediante FreeRTOS, garantizando fluidez en la interfaz sin interrumpir procesos críticos de background.
-* *Nota: El código fuente es propiedad intelectual privada de la empresa.*
+**Arquitectura y Logros Técnicos:**
+* **Desacoplamiento de Hilos y Concurrencia:** Implementación de una arquitectura orientada a eventos bajo **FreeRTOS**, aislando el hilo de renderizado de la interfaz gráfica (LVGL) de las tareas asíncronas de background (escaneo Wi-Fi, sincronización SNTP y peticiones HTTP), garantizando una navegación fluida a 60 FPS sin bloqueos (*blocking code*).
+* **Máquina de Estados y Motor de Reglas Interno:** Diseño de una lógica de control basada en máquinas de estado concurrentes para la gestión de seguridad. El sistema evalúa en tiempo real las restricciones operativas (ej. bloquear accesos físicos si hay tareas críticas activas) y administra de forma segura el escalamiento jerárquico de privilegios (Superusuario).
+* **Ecosistema de Telemetría No Bloqueante:** Integración de un cliente HTTP asíncrono que procesa y despacha cargas útiles (*payloads* JSON) hacia la API externa inmediatamente después de cada cambio de estado en los periféricos de potencia, optimizando el consumo de ancho de banda y memoria RAM.
+* **Canal de Comunicación Dual (Híbrido):** Configuración dinámica del controlador inalámbrico del ESP32 para alternar eficientemente entre el modo Estación (Wi-Fi) para persistencia de datos en la nube, y el periférico Bluetooth Low Energy (BLE) para la provisión y validación segura desde clientes web.
+*Nota: El código fuente y los diagramas esquemáticos detallados se omiten en este repositorio por ser propiedad intelectual privada y confidencial de la empresa.*
 
 ---
 
