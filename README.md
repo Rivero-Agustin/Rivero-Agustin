@@ -1,3 +1,9 @@
+
+
+
+
+
+
 # ¡Hola! Soy Agustin 👋
 
 Soy Desarrollador de Productos IoT y estudiante avanzado de Ingeniería Electrónica pronto a recibirme. Me especializo en conectar el mundo físico con el digital, dominando desde la programación a bajo nivel en microcontroladores hasta el desarrollo de interfaces gráficas, aplicaciones web y automatización de procesos corporativos.
@@ -16,6 +22,8 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 > **Demostración de Interfaz y Conectividad IoT (ESP32-P4 con pantalla táctil):**
 > 
 > https://github.com/user-attachments/assets/324bd5b2-f8c7-4a46-bcdd-0532d09458d6
+>
+> https://github.com/user-attachments/assets/8e793bd7-6163-46b8-b777-37f531e37833
 > 
 > *👆 En pantalla: UI táctil LVGL (arriba-izq), Consola de debug (abajo) y cliente Web Bluetooth (arriba-der).*
 > * **Gestión de Memoria y Red:** Secuencia de booteo con recuperación de variables de entorno (NVS) y conexión Wi-Fi automática con escaneo de redes asíncrono sin bloquear la interfaz gráfica.
