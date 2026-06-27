@@ -35,7 +35,7 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 * **Máquina de Estados y Motor de Reglas Interno:** Diseño de una lógica de control basada en máquinas de estado concurrentes para la gestión de seguridad. El sistema evalúa en tiempo real las restricciones operativas (ej. bloquear accesos físicos si hay tareas críticas activas) y administra de forma segura el escalamiento jerárquico de privilegios (Superusuario).
 * **Ecosistema de Telemetría No Bloqueante:** Integración de un cliente HTTP asíncrono que procesa y despacha cargas útiles (*payloads* JSON) hacia la API externa inmediatamente después de cada cambio de estado en los periféricos de potencia, optimizando el consumo de ancho de banda y memoria RAM.
 * **Canal de Comunicación Dual (Híbrido):** Configuración dinámica del controlador inalámbrico del ESP32 para alternar eficientemente entre el modo Estación (Wi-Fi) para persistencia de datos en la nube, y el periférico Bluetooth Low Energy (BLE) para la provisión y validación segura desde clientes web.
-*Nota: El código fuente y los diagramas esquemáticos detallados se omiten en este repositorio por ser propiedad intelectual privada y confidencial de la empresa.*
+* *Nota: El código fuente y los diagramas esquemáticos detallados se omiten en este repositorio por ser propiedad intelectual privada y confidencial de la empresa.*
 
 ---
 
