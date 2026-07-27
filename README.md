@@ -35,7 +35,7 @@ Mientras que el resto de los proyectos en este portfolio son desarrollos de cód
 
 ---
 
-## 📱 1. Desarrollo de GUI para Sistemas Embebidos Críticos
+## 📱 Desarrollo de GUI para Sistemas Embebidos Críticos
 *Tecnologías: C/C++, ESP-IDF, LVGL, SquareLine Studio, FreeRTOS*
 
 Diseño e integración de interfaces gráficas nativas para microcontroladores (familia ESP32) en entornos industriales.
@@ -60,7 +60,7 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 
 ---
 
-## ⚡ 2. Sistema de Adquisición de Datos en Tiempo Real (End-to-End)
+## ⚡ Sistema de Adquisición de Datos en Tiempo Real (End-to-End)
 *Tecnologías: Next.js, React, Electron.js, C/C++, Interfaz Serial*
 
 Desarrollo integral de un sistema que define el flujo de trabajo según normas de ensayo, el cual lee, procesa y genera informes de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel.
@@ -81,7 +81,7 @@ Desarrollo integral de un sistema que define el flujo de trabajo según normas d
 
 ---
 
-## 🏢 3. Arquitectura de Soluciones Corporativas Low-Code
+## 🏢 Arquitectura de Soluciones Corporativas Low-Code
 *Tecnologías: Power Apps, SharePoint, Power Automate*
 
 Digitalización y optimización de flujos de trabajo corporativos para la industria siderúrgica, reemplazando procesos manuales por aplicaciones interactivas.
