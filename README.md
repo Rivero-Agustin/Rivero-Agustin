@@ -12,6 +12,17 @@ Soy Desarrollador de Productos IoT y estudiante avanzado de Ingeniería Electró
 
 A continuación, presento algunos de los sistemas y arquitecturas en los que he trabajado:
 
+## 🌟 Proyecto Open-Source Destacado: Arquitectura Cloud IoT
+*Pipeline de telemetría Cloud Native End-to-End (ESP32 ➔ AWS Serverless ➔ Node.js ➔ Docker ➔ Grafana)*
+
+Mientras que el resto de los proyectos en este portfolio son desarrollos de código cerrado o bajo acuerdos de confidencialidad, este repositorio público funciona como mi **prueba de código**. Demuestra mi capacidad técnica para construir **infraestructuras escalables en la nube**, aplicar buenas prácticas de **ciberseguridad (rotación de credenciales y roles IAM)**, **orquestar microservicios** e **integrar hardware (Edge) con la nube**.
+
+[<kbd> <br> 🚀 Ver Código Fuente y Documentación ➔ <br> </kbd>](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline)
+
+![Demo IoT](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/demo.dashboard.grafana.gif)
+
+**Stack Tecnológico:** `ESP32 / FreeRTOS` | `AWS (IoT Core, SQS, IAM)` | `Node.js` | `MongoDB` | `Docker` | `Grafana`
+
 ---
 
 ## 📱 1. Desarrollo de GUI para Sistemas Embebidos Críticos
