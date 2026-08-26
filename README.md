@@ -42,8 +42,11 @@ Diseño y compilación de un sistema operativo Linux personalizado para actuar c
 
 [<kbd> <br> 🚀 Ver Código Fuente y Documentación ➔ <br> </kbd>](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
 
-> **Arquitectura Edge-to-Cloud y Virtualización:**
-> Este repositorio destaca mi capacidad para resolver desafíos de infraestructura de red complejos, mapeando el flujo de datos desde el microcontrolador (ESP32) en la red local, atravesando túneles en el host (Windows) y la capa de virtualización (WSL2), hasta ingresar al broker MQTT dentro del entorno Linux emulado.
+> **Diagrama de Arquitectura y Redes:**
+>
+> ![Diagrama de Arquitectura](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/blob/main/docs/architecture.diagram.png)
+> 
+> *👆 Arquitectura del sistema: Flujo de telemetría desde el hardware físico, atravesando túneles de red (portproxy) en Windows/WSL2, hasta el entorno Linux emulado y AWS.*
 
 **Arquitectura y Logros Técnicos:**
 * **Embedded Linux (Buildroot):** Construcción desde cero de un sistema de archivos raíz (`rootfs`) mínimo y compilación cruzada para arquitectura ARM (Cortex-A53).
