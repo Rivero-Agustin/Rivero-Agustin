@@ -4,7 +4,7 @@
 
 # Hi! I'm Agustin 👋
 
-I am an IoT Product Developer and an advanced Electronic Engineering student near graduation. I specialize in bridging the physical and digital worlds, mastering everything from low-level microcontroller programming to graphical user interfaces (GUI), web applications, and enterprise process automation.
+I am an Embedded Software & Cloud IoT Solutions Engineer and an advanced Electronic Engineering student near graduation. I specialize in bridging the physical and digital worlds, mastering everything from low-level microcontroller programming to graphical user interfaces (GUI), web applications, and enterprise process automation.
 
 🛠️ **My Core Tech Stack:**
 

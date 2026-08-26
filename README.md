@@ -4,7 +4,7 @@
 
 # ¡Hola! Soy Agustin 👋
 
-Soy Desarrollador de Productos IoT y estudiante avanzado de Ingeniería Electrónica pronto a recibirme. Me especializo en conectar el mundo físico con el digital, dominando desde la programación a bajo nivel en microcontroladores hasta el desarrollo de interfaces gráficas, aplicaciones web y automatización de procesos corporativos.
+Soy Desarrollador de Sistemas Embebidos y Soluciones Cloud IoT, y estudiante avanzado de Ingeniería Electrónica pronto a recibirme. Me especializo en conectar el mundo físico con el digital, dominando desde la programación a bajo nivel en microcontroladores hasta el desarrollo de interfaces gráficas, aplicaciones web y automatización de procesos corporativos.
 
 🛠️ **Mi Stack Principal:**
 
