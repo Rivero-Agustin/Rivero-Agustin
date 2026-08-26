@@ -53,7 +53,7 @@ Diseño y compilación de un sistema operativo Linux personalizado para actuar c
 
 ---
 
-## 📱 2. Desarrollo de GUI para Sistemas Embebidos Críticos
+## 📱 3. Desarrollo de GUI para Sistemas Embebidos Críticos
 *Tecnologías: C/C++, ESP-IDF, LVGL, SquareLine Studio, FreeRTOS*
 
 Diseño e integración de interfaces gráficas nativas para microcontroladores (familia ESP32) en entornos industriales.
@@ -78,7 +78,7 @@ Diseño e integración de interfaces gráficas nativas para microcontroladores (
 
 ---
 
-## ⚡ 3. Sistema de Adquisición de Datos en Tiempo Real (End-to-End)
+## ⚡ 4. Sistema de Adquisición de Datos en Tiempo Real (End-to-End)
 *Tecnologías: Next.js, React, Electron.js, C/C++, Interfaz Serial*
 
 Desarrollo integral de un sistema que define el flujo de trabajo según normas de ensayo, el cual lee, procesa y genera informes de mediciones físicas en tiempo real, conectando hardware a medida con software de alto nivel.
@@ -99,7 +99,7 @@ Desarrollo integral de un sistema que define el flujo de trabajo según normas d
 
 ---
 
-## 🏢 4. Arquitectura de Soluciones Corporativas Low-Code
+## 🏢 5. Arquitectura de Soluciones Corporativas Low-Code
 *Tecnologías: Power Apps, SharePoint, Power Automate*
 
 Digitalización y optimización de flujos de trabajo corporativos para la industria siderúrgica, reemplazando procesos manuales por aplicaciones interactivas.
