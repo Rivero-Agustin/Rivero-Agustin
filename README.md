@@ -35,6 +35,24 @@ Mientras que el resto de los proyectos en este portfolio son desarrollos de cód
 
 ---
 
+## 🐧 2. Proyecto Open-Source: Custom Embedded Linux Edge Gateway
+*Tecnologías: Buildroot, QEMU, C/C++, Python, WSL2, Redes TCP/IP*
+
+Diseño y compilación de un sistema operativo Linux personalizado para actuar como nodo Edge. El sistema procesa telemetría física de sensores UWB (Ultra-Wideband) y gestiona de forma segura el puente hacia AWS IoT Core.
+
+[<kbd> <br> 🚀 Ver Código Fuente y Documentación ➔ <br> </kbd>](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
+
+> **Arquitectura Edge-to-Cloud y Virtualización:**
+> Este repositorio destaca mi capacidad para resolver desafíos de infraestructura de red complejos, mapeando el flujo de datos desde el microcontrolador (ESP32) en la red local, atravesando túneles en el host (Windows) y la capa de virtualización (WSL2), hasta ingresar al broker MQTT dentro del entorno Linux emulado.
+
+**Arquitectura y Logros Técnicos:**
+* **Embedded Linux (Buildroot):** Construcción desde cero de un sistema de archivos raíz (`rootfs`) mínimo y compilación cruzada para arquitectura ARM (Cortex-A53).
+* **Networking Avanzado:** Resolución de arquitecturas "doble NAT" configurando reglas de Firewall, túneles *portproxy* y *host forwarding* en QEMU para exponer el puerto TCP local hacia el hardware físico.
+* **Edge Computing (Python):** Implementación de lógica local para el procesamiento de datos en tiempo real, evaluando anomalías y riesgos de colisión antes de despachar eventos críticos a la nube, reduciendo la latencia y el consumo de ancho de banda.
+* **Seguridad Híbrida:** Configuración del Gateway como barrera de seguridad, recibiendo telemetría local en texto plano (optimizando la carga computacional del nodo ESP32) y encapsulando la salida hacia AWS IoT Core mediante MQTTS (TLS 1.2).
+
+---
+
 ## 📱 2. Desarrollo de GUI para Sistemas Embebidos Críticos
 *Tecnologías: C/C++, ESP-IDF, LVGL, SquareLine Studio, FreeRTOS*
 
