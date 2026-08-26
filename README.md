@@ -27,7 +27,7 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 
 Mientras que el resto de los proyectos en este portfolio son desarrollos de código cerrado o bajo acuerdos de confidencialidad, este repositorio público funciona como mi **prueba de código**. Demuestra mi capacidad técnica para construir **infraestructuras escalables en la nube**, aplicar buenas prácticas de **ciberseguridad (rotación de credenciales y roles IAM)**, **orquestar microservicios** e **integrar hardware (Edge) con la nube**.
 
-[<kbd> <br> 🚀 Ver Código Fuente y Documentación ➔ <br> </kbd>](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline)
+[![Ver Código](https://img.shields.io/badge/🚀_Ver_Código_Fuente_y_Documentación_➔-2ea44f?style=for-the-badge)](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline)
 
 ![Demo IoT](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/demo.dashboard.grafana.gif)
 
@@ -40,7 +40,7 @@ Mientras que el resto de los proyectos en este portfolio son desarrollos de cód
 
 Diseño y compilación de un sistema operativo Linux personalizado para actuar como nodo Edge. El sistema procesa telemetría física de sensores UWB (Ultra-Wideband) y gestiona de forma segura el puente hacia AWS IoT Core.
 
-[<kbd> <br> 🚀 Ver Código Fuente y Documentación ➔ <br> </kbd>](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
+[![Ver Código](https://img.shields.io/badge/🚀_Ver_Código_Fuente_y_Documentación_➔-0078D4?style=for-the-badge)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
 
 > **Diagrama de Arquitectura y Redes:**
 >
