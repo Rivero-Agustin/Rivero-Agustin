@@ -23,15 +23,23 @@ Soy Desarrollador de Productos IoT y estudiante avanzado de Ingeniería Electró
 A continuación, presento algunos de los sistemas y arquitecturas en los que he trabajado:
 
 ## 🌟 1. Proyecto Open-Source Destacado: Arquitectura Cloud IoT
-*Pipeline de telemetría Cloud Native End-to-End (ESP32 ➔ AWS Serverless ➔ Node.js ➔ Docker ➔ Grafana)*
+*Tecnologías: ESP32, FreeRTOS, AWS (IoT Core, SQS, IAM), Node.js, MongoDB, Docker, Grafana*
 
-Mientras que el resto de los proyectos en este portfolio son desarrollos de código cerrado o bajo acuerdos de confidencialidad, este repositorio público funciona como mi **prueba de código**. Demuestra mi capacidad técnica para construir **infraestructuras escalables en la nube**, aplicar buenas prácticas de **ciberseguridad (rotación de credenciales y roles IAM)**, **orquestar microservicios** e **integrar hardware (Edge) con la nube**.
+Junto con el Gateway en Linux Embebido, este repositorio público funciona como mi **prueba de código** principal, contrastando con el resto de los desarrollos del portfolio que se encuentran bajo acuerdos de confidencialidad corporativa.
 
-[![Ver Código](https://img.shields.io/badge/🚀_Ver_Código_Fuente_y_Documentación_➔-2ea44f?style=for-the-badge)](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline)
+[![Ver Código](https://img.shields.io/badge/🚀_Ver_Código_Fuente_y_Documentación_➔-0078D4?style=for-the-badge)](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline)
 
-![Demo IoT](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/demo.dashboard.grafana.gif)
+> **Visualización de Telemetría en Tiempo Real:**
+>
+> ![Demo IoT](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/demo.dashboard.grafana.gif)
+> 
+> *👆 Dashboard en Grafana: Monitoreo End-to-End consumiendo datos desde la arquitectura Serverless en AWS, procesados por Node.js y orquestados en Docker.*
 
-**Stack Tecnológico:** `ESP32 / FreeRTOS` | `AWS (IoT Core, SQS, IAM)` | `Node.js` | `MongoDB` | `Docker` | `Grafana`
+**Arquitectura y Logros Técnicos:**
+* **Infraestructura Cloud y Escalabilidad:** Diseño de una arquitectura *Serverless* en AWS, integrando IoT Core y colas de mensajes (SQS) para garantizar la ingesta masiva de datos sin pérdida de telemetría.
+* **Ciberseguridad y Gestión de Accesos:** Aplicación de buenas prácticas de seguridad en la nube mediante la configuración estricta de políticas y rotación de credenciales con roles IAM.
+* **Orquestación de Microservicios:** Despliegue del backend (Node.js) y bases de datos (MongoDB) utilizando contenedores Docker para asegurar la portabilidad y rápida replicación del entorno.
+* **Integración Edge-to-Cloud:** Conexión robusta del hardware físico (ESP32 operando con FreeRTOS) hacia la nube, cerrando el ciclo completo del dato desde el microcontrolador hasta el dashboard de visualización final.
 
 ---
 
