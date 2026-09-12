@@ -43,26 +43,34 @@ Junto con el Gateway en Linux Embebido, este repositorio público funciona como 
 
 ---
 
-## 🐧 2. Proyecto Open-Source: Custom Embedded Linux Edge Gateway
+## 🐧 2. Proyecto Open-Source: Gateway IoT Edge en Linux Embebido & Pipeline CI/CD (HIL)
 
-_Tecnologías: Buildroot, QEMU, C/C++, Python, WSL2, Redes TCP/IP_
+_Tecnologías: Buildroot, Linux Embebido, FreeRTOS, ESP-IDF, C/C++, Python, GitHub Actions, CI/CD HIL, AWS IoT Core_
 
-Diseño y compilación de un sistema operativo Linux personalizado para actuar como nodo Edge. El sistema procesa telemetría física de sensores UWB (Ultra-Wideband) y gestiona de forma segura el puente hacia AWS IoT Core.
+Sistema integral de prevención de colisiones industriales que combina un SO Linux Embebido personalizado (Buildroot) en el Edge, firmware FreeRTOS dual-core en microcontrolador (ESP32 + UWB), filtrado inteligente de telemetría y un pipeline automatizado de CI/CD con pruebas Hardware-in-the-Loop (HIL) sobre hardware físico.
 
+[![Pipeline CI/CD PlatformIO](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml/badge.svg)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml)
 [![Ver Código](https://img.shields.io/badge/🚀_Ver_Código_Fuente_y_Documentación_➔-0078D4?style=for-the-badge)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
 
 > **Diagrama de Arquitectura y Redes:**
 >
 > ![Diagrama de Arquitectura](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/blob/main/docs/architecture.diagram.png)
 >
-> _👆 Arquitectura del sistema: Flujo de telemetría desde el hardware físico, atravesando túneles de red (portproxy) en Windows/WSL2, hasta el entorno Linux emulado y AWS._
+> _👆 Arquitectura del sistema: Flujo de telemetría desde el hardware físico (ESP32 + UWB), atravesando túneles de red (portproxy) en Windows/WSL2, hasta el entorno Linux emulado y AWS IoT Core._
+
+> **Pipeline de CI/CD y Hardware-in-the-Loop (HIL):**
+>
+> ![Diagrama del Pipeline CI/CD & HIL](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/blob/main/docs/pipeline.cicd.png)
+>
+> _👆 Pipeline automatizado en dos etapas: validación y tests unitarios en la nube (x86) seguidos de ejecución de pruebas sobre la placa física ESP32 vía runner local y despliegue continuo (CD)._
 
 **Arquitectura y Logros Técnicos:**
 
-- **Embedded Linux (Buildroot):** Construcción desde cero de un sistema de archivos raíz (`rootfs`) mínimo y compilación cruzada para arquitectura ARM (Cortex-A53).
-- **Networking Avanzado:** Resolución de arquitecturas "doble NAT" configurando reglas de Firewall, túneles _portproxy_ y _host forwarding_ en QEMU para exponer el puerto TCP local hacia el hardware físico.
-- **Edge Computing (Python):** Implementación de lógica local para el procesamiento de datos en tiempo real, evaluando anomalías y riesgos de colisión antes de despachar eventos críticos a la nube, reduciendo la latencia y el consumo de ancho de banda.
-- **Seguridad Híbrida:** Configuración del Gateway como barrera de seguridad, recibiendo telemetría local en texto plano (optimizando la carga computacional del nodo ESP32) y encapsulando la salida hacia AWS IoT Core mediante MQTTS (TLS 1.2).
+- **Embedded Linux (Buildroot):** Construcción desde cero de un sistema de archivos raíz (`rootfs`) mínimo y compilación cruzada para arquitectura ARM (Cortex-A53), emulado en QEMU.
+- **Pipeline CI/CD con Hardware-in-the-Loop (HIL):** Implementación de un flujo automatizado en GitHub Actions en dos etapas: compilación y pruebas unitarias (Unity Framework) en x86 y compilación cruzada para Xtensa en la nube, seguido de pruebas automatizadas sobre la placa física ESP32 vía runner local self-hosted y despliegue continuo (CD) con inyección de credenciales.
+- **Firmware Asimétrico Dual-Core (FreeRTOS):** Desacoplamiento de tareas en ESP32 ancladas a núcleos físicos (Core 1 para rangos UWB con resolución de nanosegundos y refresco OLED no bloqueante; Core 0 para conectividad Wi-Fi y cliente MQTT nativo de ESP-IDF).
+- **Edge Computing y Detección de Anomalías (Python):** Procesamiento de telemetría en tiempo real con búfer de ventana deslizante ($N=5$) para evaluar peligro sostenido y filtrar saltos bruscos por multitrayectoria/NLOS, reduciendo en más de un 80% el volumen de datos despachado a la nube.
+- **Networking Avanzado y Seguridad Híbrida:** Resolución de topologías "doble NAT" mediante túneles _portproxy_, firewall y _host forwarding_ en QEMU; encapsulación criptográfica de alertas hacia AWS IoT Core vía MQTTS (TLS 1.2 / certificados X.509).
 
 ---
 

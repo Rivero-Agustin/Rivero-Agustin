@@ -43,26 +43,34 @@ Along with the Embedded Linux Gateway, this public repository serves as my prima
 
 ---
 
-## 🐧 2. Open-Source Project: Custom Embedded Linux Edge Gateway
+## 🐧 2. Open-Source Project: Embedded Linux IoT Edge Gateway & CI/CD Pipeline (HIL)
 
-_Technologies: Buildroot, QEMU, C/C++, Python, WSL2, TCP/IP Networking_
+_Technologies: Buildroot, Embedded Linux, FreeRTOS, ESP-IDF, C/C++, Python, GitHub Actions, CI/CD HIL, AWS IoT Core_
 
-Design and build of a custom Linux operating system to act as an Edge node. The system processes physical telemetry from UWB (Ultra-Wideband) sensors and securely manages the bridge to AWS IoT Core.
+End-to-end industrial collision prevention system combining a custom Embedded Linux OS (Buildroot) at the Edge, dual-core FreeRTOS firmware (ESP32 + UWB), intelligent edge telemetry filtering, and an automated CI/CD pipeline with Hardware-in-the-Loop (HIL) testing on physical hardware.
 
+[![Pipeline CI/CD PlatformIO](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml/badge.svg)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml)
 [![View Code](https://img.shields.io/badge/🚀_View_Source_Code_%26_Documentation_➔-0078D4?style=for-the-badge)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
 
 > **Architecture and Networking Diagram:**
 >
 > ![Architecture Diagram](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/blob/main/docs/architecture.diagram.png)
 >
-> _👆 System Architecture: Telemetry dataflow from physical hardware across network tunnels (portproxy) in Windows/WSL2 to the emulated Linux environment and AWS._
+> _👆 System Architecture: Telemetry dataflow from physical hardware (ESP32 + UWB) across network tunnels (portproxy) in Windows/WSL2 to the emulated Linux environment and AWS IoT Core._
+
+> **CI/CD Pipeline & Hardware-in-the-Loop (HIL):**
+>
+> ![CI/CD & HIL Pipeline Diagram](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/blob/main/docs/pipeline.cicd.png)
+>
+> _👆 Two-stage automated pipeline: cloud-based build and unit testing (x86) followed by on-target test execution on physical ESP32 hardware via a self-hosted runner and continuous deployment (CD)._
 
 **Architecture & Technical Achievements:**
 
-- **Embedded Linux (Buildroot):** Built a minimal root filesystem (`rootfs`) from scratch and cross-compiled for ARM architecture (Cortex-A53).
-- **Advanced Networking:** Solved "Double NAT" architectures by configuring Firewall rules, _portproxy_ tunnels, and QEMU _host forwarding_ to expose the local TCP port to physical hardware.
-- **Edge Computing (Python):** Implemented local real-time data processing logic, evaluating anomalies and collision risks before dispatching critical events to the cloud, reducing latency and bandwidth consumption.
-- **Hybrid Security:** Configured the Gateway as a security boundary, receiving local plaintext telemetry (offloading computation from the ESP32 node) and encapsulating upstream traffic to AWS IoT Core via MQTTS (TLS 1.2).
+- **Embedded Linux (Buildroot):** Built a minimal root filesystem (`rootfs`) from scratch and cross-compiled for ARM architecture (Cortex-A53), emulated in QEMU.
+- **CI/CD Pipeline with Hardware-in-the-Loop (HIL):** Implemented an automated two-stage GitHub Actions workflow: dependency caching, native x86 unit testing (Unity Framework), and Xtensa cross-compilation in the cloud, followed by automated test execution directly on physical ESP32 hardware via a self-hosted runner and continuous deployment (CD) with secure credential injection.
+- **Asymmetric Dual-Core Firmware (FreeRTOS):** Decoupled microcontroller tasks pinned to physical cores (Core 1 for nanosecond UWB ranging and non-blocking OLED refresh; Core 0 for Wi-Fi management and native ESP-IDF MQTT stack).
+- **Edge Computing & Anomaly Detection (Python):** Real-time local telemetry processing with a sliding window buffer ($N=5$) to evaluate sustained danger and filter multipath/NLOS spikes, reducing upstream cloud data ingestion by over 80%.
+- **Advanced Networking & Hybrid Security:** Solved "Double NAT" architectures using _portproxy_ tunnels, firewall rules, and QEMU _host forwarding_; cryptographically encapsulated upstream alerts to AWS IoT Core via MQTTS (TLS 1.2 / X.509 certificates) with the Gateway serving as a secure boundary.
 
 ---
 
