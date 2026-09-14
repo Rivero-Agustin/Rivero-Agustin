@@ -24,7 +24,7 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 
 _Tecnologías: ESP32, FreeRTOS, AWS (IoT Core, SQS, IAM), Node.js, MongoDB, Docker, Grafana_
 
-Junto con el Gateway en Linux Embebido, este repositorio público funciona como mi **prueba de código** principal, contrastando con el resto de los desarrollos del portfolio que se encuentran bajo acuerdos de confidencialidad corporativa.
+Junto con el Gateway IoT Edge en Linux Embebido con IA, este repositorio público funciona como mi **prueba de código** principal, contrastando con el resto de los desarrollos del portfolio que se encuentran bajo acuerdos de confidencialidad corporativa.
 
 [![Ver Código](https://img.shields.io/badge/🚀_Ver_Código_Fuente_y_Documentación_➔-0078D4?style=for-the-badge)](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline)
 
@@ -43,20 +43,21 @@ Junto con el Gateway en Linux Embebido, este repositorio público funciona como 
 
 ---
 
-## 🐧 2. Proyecto Open-Source: Gateway IoT Edge en Linux Embebido & Pipeline CI/CD (HIL)
+## 🐧 2. Proyecto Open-Source: Gateway IoT Edge en Linux Embebido con IA & Pipeline CI/CD: Prevención de Colisiones
 
-_Tecnologías: Buildroot, Linux Embebido, FreeRTOS, ESP-IDF, C/C++, Python, GitHub Actions, CI/CD HIL, AWS IoT Core_
+_Tecnologías: TinyML, Edge Impulse, Buildroot, Linux Embebido, FreeRTOS, ESP-IDF, C/C++, Python, GitHub Actions, CI/CD HIL, AWS IoT Core_
 
-Sistema integral de prevención de colisiones industriales que combina un SO Linux Embebido personalizado (Buildroot) en el Edge, firmware FreeRTOS dual-core en microcontrolador (ESP32 + UWB), filtrado inteligente de telemetría y un pipeline automatizado de CI/CD con pruebas Hardware-in-the-Loop (HIL) sobre hardware físico.
+Sistema integral de prevención de colisiones industriales con arquitectura de inteligencia Edge-to-Cloud en dos niveles: clasificación de trayectorias cinemáticas y filtrado de ruido RF mediante **redes neuronales TinyML (Edge Impulse)** directamente en el microcontrolador (ESP32 + UWB), procesamiento y correlación local de eventos sobre un **Gateway Linux Embebido a medida (Buildroot)** (>80% de reducción de ancho de banda cloud), enlace seguro a **AWS IoT Core** y pipeline automatizado de **CI/CD con pruebas Hardware-in-the-Loop (HIL)** sobre hardware físico.
 
 [![Pipeline CI/CD PlatformIO](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml/badge.svg)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml)
+![TinyML](https://img.shields.io/badge/TinyML-Edge_Impulse-0052CC?style=for-the-badge&logo=edgeimpulse&logoColor=white)
 [![Ver Código](https://img.shields.io/badge/🚀_Ver_Código_Fuente_y_Documentación_➔-0078D4?style=for-the-badge)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
 
-> **Diagrama de Arquitectura y Redes:**
+> **Diagrama de Arquitectura y Flujo de Datos:**
 >
 > ![Diagrama de Arquitectura](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/blob/main/docs/architecture.diagram.png)
 >
-> _👆 Arquitectura del sistema: Flujo de telemetría desde el hardware físico (ESP32 + UWB), atravesando túneles de red (portproxy) en Windows/WSL2, hasta el entorno Linux emulado y AWS IoT Core._
+> _👆 Arquitectura del sistema: Inferencia TinyML on-device en ESP32, flujo de telemetría hacia el Gateway Linux Embebido (Buildroot) a través de túneles portproxy en WSL2/Windows, correlación local de eventos y despacho de alertas críticas a AWS IoT Core._
 
 > **Pipeline de CI/CD y Hardware-in-the-Loop (HIL):**
 >
@@ -66,11 +67,12 @@ Sistema integral de prevención de colisiones industriales que combina un SO Lin
 
 **Arquitectura y Logros Técnicos:**
 
-- **Embedded Linux (Buildroot):** Construcción desde cero de un sistema de archivos raíz (`rootfs`) mínimo y compilación cruzada para arquitectura ARM (Cortex-A53), emulado en QEMU.
-- **Pipeline CI/CD con Hardware-in-the-Loop (HIL):** Implementación de un flujo automatizado en GitHub Actions en dos etapas: compilación y pruebas unitarias (Unity Framework) en x86 y compilación cruzada para Xtensa en la nube, seguido de pruebas automatizadas sobre la placa física ESP32 vía runner local self-hosted y despliegue continuo (CD) con inyección de credenciales.
-- **Firmware Asimétrico Dual-Core (FreeRTOS):** Desacoplamiento de tareas en ESP32 ancladas a núcleos físicos (Core 1 para rangos UWB con resolución de nanosegundos y refresco OLED no bloqueante; Core 0 para conectividad Wi-Fi y cliente MQTT nativo de ESP-IDF).
-- **Edge Computing y Detección de Anomalías (Python):** Procesamiento de telemetría en tiempo real con búfer de ventana deslizante ($N=5$) para evaluar peligro sostenido y filtrar saltos bruscos por multitrayectoria/NLOS, reduciendo en más de un 80% el volumen de datos despachado a la nube.
-- **Networking Avanzado y Seguridad Híbrida:** Resolución de topologías "doble NAT" mediante túneles _portproxy_, firewall y _host forwarding_ en QEMU; encapsulación criptográfica de alertas hacia AWS IoT Core vía MQTTS (TLS 1.2 / certificados X.509).
+- **Inferencia TinyML On-Device (Edge Impulse C++ SDK):** Despliegue de red neuronal optimizada en ESP32 para clasificar cinemática y calidad del enlace RF en tiempo real en 4 estados (`vehicle_hazard`, `pedestrian_approach`, `static_safe` y filtrado de ruido por obstrucción `nlos_noise`), analizando multicanal UWB (`distance`, `rx_power`, `fp_power`) con ventana deslizante determinista de 15 muestras y sin asignación dinámica de memoria en el bucle caliente.
+- **Embedded Linux (Buildroot):** Construcción desde cero de un sistema de archivos raíz (`rootfs`) mínimo y compilación cruzada para arquitectura ARM (Cortex-A53), emulado en QEMU con broker MQTT local y servicio Edge en Python.
+- **Inteligencia en el Borde en Dos Niveles:** El Gateway actúa como segundo nivel de decisión: correlaciona las predicciones TinyML del microcontrolador (activando alertas ante `vehicle_hazard` con confianza > 60%), evalúa reglas heurísticas de respaldo (peligro sostenido y salto brusco) y reduce en más de un **80%** la ingesta de datos hacia AWS IoT Core.
+- **Firmware Asimétrico Dual-Core (FreeRTOS):** Segregación física de tareas en ESP32: Core 1 para cálculo ToF UWB en nanosegundos, inferencia TinyML y actualización OLED; Core 0 para la pila Wi-Fi y colas MQTT nativas de ESP-IDF, aprovechando memoria externa PSRAM.
+- **Pipeline CI/CD con Hardware-in-the-Loop (HIL):** Flujo automatizado en GitHub Actions en dos fases: compilación y tests unitarios en x86 (Unity Framework) con compilación cruzada en la nube, seguido de pruebas automáticas sobre la placa física ESP32 vía runner local self-hosted y despliegue continuo (CD) con inyección segura de credenciales.
+- **Networking Avanzado y Seguridad Criptográfica:** Resolución de entornos "doble NAT" mediante túneles _portproxy_, firewall y _host forwarding_ en QEMU; encapsulación criptográfica de alertas hacia AWS IoT Core vía MQTTS (TLS 1.2 / certificados X.509).
 
 ---
 
