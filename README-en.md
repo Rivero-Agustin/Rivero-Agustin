@@ -10,6 +10,8 @@ I am an Embedded Software & Cloud IoT Solutions Engineer and an advanced Electro
 
 ![C/C++](https://img.shields.io/badge/C%2FC%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![ESP-IDF](https://img.shields.io/badge/ESP--IDF-000000?style=for-the-badge&logo=espressif&logoColor=white)
+![Embedded Linux](https://img.shields.io/badge/Embedded_Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![TinyML](https://img.shields.io/badge/TinyML-0052CC?style=for-the-badge&logo=edgeimpulse&logoColor=white)
 ![LVGL](https://img.shields.io/badge/LVGL-333333?style=for-the-badge)
 ![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -49,9 +51,8 @@ _Technologies: TinyML, Edge Impulse, Buildroot, Embedded Linux, FreeRTOS, ESP-ID
 
 End-to-end industrial collision prevention system featuring a two-tier edge intelligence architecture: on-device kinematic trajectory classification and RF noise filtering via **TinyML neural networks (Edge Impulse)** on the microcontroller (ESP32 + UWB), local event processing and correlation on a **custom Embedded Linux Gateway (Buildroot)** (>80% cloud bandwidth reduction), secure telemetry upstream to **AWS IoT Core**, and an automated **CI/CD pipeline with Hardware-in-the-Loop (HIL)** testing on physical hardware.
 
-[![Pipeline CI/CD PlatformIO](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml/badge.svg)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml)
-![TinyML](https://img.shields.io/badge/TinyML-Edge_Impulse-0052CC?style=for-the-badge&logo=edgeimpulse&logoColor=white)
 [![View Code](https://img.shields.io/badge/🚀_View_Source_Code_%26_Documentation_➔-0078D4?style=for-the-badge)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway)
+[![Pipeline CI/CD PlatformIO](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml/badge.svg)](https://github.com/Rivero-Agustin/embedded-linux-iot-gateway/actions/workflows/build.yml)
 
 > **System Architecture and Dataflow:**
 >
