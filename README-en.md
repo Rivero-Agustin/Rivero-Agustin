@@ -22,9 +22,11 @@ I am an Embedded Software & Cloud IoT Solutions Engineer and an advanced Electro
 
 Below, I present some of the systems and architectures I have worked on:
 
-## 🌟 1. Featured Open-Source Project: Cloud IoT Architecture
+## 🌟 1. Featured Open-Source Project: Enterprise IoT Provisioning & Telemetry Pipeline
 
-_Technologies: ESP32, FreeRTOS, AWS (IoT Core, SQS, IAM), Node.js, MongoDB, Docker, Grafana_
+_Technologies: ESP32, FreeRTOS, AWS (IoT Core, SQS, DLQ, IAM), Node.js, MongoDB, Docker, Grafana, Terraform (IaC), GitHub Actions (GitOps)_
+
+End-to-end Cloud Native IoT telemetry pipeline: from UWB sensor capture and secure Zero-Touch Provisioning (JITP) on ESP32, to decoupled cloud ingestion on AWS (IoT Core Rules, SQS, DLQ), containerized Node.js microservices, MongoDB, and real-time Grafana observability via Docker—with automated Infrastructure as Code (IaC) using Terraform and a GitOps pipeline in GitHub Actions.
 
 Along with the Embedded Linux IoT Edge Gateway with AI, this public repository serves as my primary **code showcase**, in contrast to the rest of my portfolio developments which are protected under corporate NDAs.
 
@@ -34,14 +36,21 @@ Along with the Embedded Linux IoT Edge Gateway with AI, this public repository s
 >
 > ![IoT Demo](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/demo.dashboard.grafana.gif)
 >
-> _👆 Grafana Dashboard: End-to-End monitoring consuming data from the AWS Serverless architecture, processed by Node.js, and orchestrated in Docker._
+> _👆 Live Demo: ESP32 UWB Pro hardware streaming raw distance measurements (bottom-left), containerized Node.js backend consuming from AWS SQS into MongoDB (bottom-right), and Grafana dashboard updating instantly via cache-busting (top)._
+
+> **System Architecture and Dataflow:**
+>
+> ![Architecture Diagram](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/architecture.diagram.png)
+>
+> _👆 5-tier architecture: Edge & NVS Security (ESP32/JITP), Decoupled Serverless Ingestion (IoT Rules + SQS/DLQ), Node.js Backend, MongoDB Persistence, and Grafana Observability._
 
 **Architecture & Technical Achievements:**
 
-- **Cloud Infrastructure & Scalability:** Designed a _Serverless_ architecture on AWS, integrating IoT Core and message queuing (SQS) to ensure high-throughput data ingestion without telemetry loss.
-- **Cybersecurity & Access Management:** Applied cloud security best practices through strict policy configuration and credential rotation using IAM roles.
-- **Microservices Orchestration:** Deployed backend services (Node.js) and database (MongoDB) using Docker containers to guarantee portability and rapid environment replication.
-- **Edge-to-Cloud Integration:** Robust connection from physical hardware (ESP32 running FreeRTOS) to the cloud, completing the full data lifecycle from microcontroller to the final visualization dashboard.
+- **Infrastructure as Code (IaC) & GitOps:** 100% automated and versioned AWS infrastructure using **Terraform (HCL)** (SQS queues, Dead Letter Queues, IoT Core rules, and Least-Privilege IAM policies), remote state locking with **AWS S3 & DynamoDB**, and a **GitHub Actions** CI/CD pipeline running predictive `terraform plan` on PRs and automated `apply` on merge to `main`.
+- **Edge Computing & Zero-Touch Provisioning (JITP):** Modular C++ firmware running on **FreeRTOS** with concurrent tasks for UWB ranging, BLE provisioning/diagnostics, and AWS IoT MQTT client; secure onboarding via **Just-In-Time Provisioning (JITP)** storing X.509 cryptographic certificates and private keys in secure **NVS** memory partitions.
+- **Serverless Cloud Ingestion & Resilience:** Asynchronous message routing using **AWS IoT Rules** decoupled via **AWS SQS** for reliable backend processing; fault-tolerant **Dead Letter Queue (DLQ)** with automated redrive policy preventing data loss.
+- **Microservices Orchestration & Persistence:** Containerized **Node.js** backend consuming SQS via long-polling, formatting time-series data and storing it in **MongoDB** with isolated Docker networks and persistent volumes.
+- **Real-Time Zero-Latency Observability:** Containerized **Grafana** dashboard consuming an engineered custom REST API with query-level `cache-busting` (`?cb=${__to}`) to stream physical distance variations with zero latency.
 
 ---
 
