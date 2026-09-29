@@ -24,9 +24,9 @@ Below, I present some of the systems and architectures I have worked on:
 
 ## 🌟 1. Featured Open-Source Project: Enterprise IoT Provisioning & Telemetry Pipeline
 
-_Technologies: ESP32, FreeRTOS, AWS (IoT Core, SQS, DLQ, IAM), Node.js, MongoDB, Docker, Grafana, Terraform (IaC), GitHub Actions (GitOps)_
+_Technologies: ESP32, FreeRTOS, AWS (IoT Core, SQS, DLQ, IAM), Kubernetes, ArgoCD, Kustomize, Docker, Node.js, MongoDB, Grafana, Terraform (IaC), GitHub Actions_
 
-End-to-end Cloud Native IoT telemetry pipeline: from UWB sensor capture and secure Zero-Touch Provisioning (JITP) on ESP32, to decoupled cloud ingestion on AWS (IoT Core Rules, SQS, DLQ), containerized Node.js microservices, MongoDB, and real-time Grafana observability via Docker—with automated Infrastructure as Code (IaC) using Terraform and a GitOps pipeline in GitHub Actions.
+End-to-end Cloud Native IoT telemetry pipeline: from UWB sensor capture and secure Zero-Touch Provisioning (JITP) on ESP32, to decoupled cloud ingestion on AWS (IoT Core Rules, SQS, DLQ), dual orchestration via Docker Compose and native Kubernetes with continuous GitOps (ArgoCD + Kustomize), containerized Node.js microservices, MongoDB (`StatefulSet`), and real-time Grafana observability—with automated Infrastructure as Code (IaC) via Terraform and CI/CD in GitHub Actions.
 
 Along with the Embedded Linux IoT Edge Gateway with AI, this public repository serves as my primary **code showcase**, in contrast to the rest of my portfolio developments which are protected under corporate NDAs.
 
@@ -42,15 +42,15 @@ Along with the Embedded Linux IoT Edge Gateway with AI, this public repository s
 >
 > ![Architecture Diagram](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/architecture.diagram.png)
 >
-> _👆 5-tier architecture: Edge & NVS Security (ESP32/JITP), Decoupled Serverless Ingestion (IoT Rules + SQS/DLQ), Node.js Backend, MongoDB Persistence, and Grafana Observability._
+> _👆 5-tier Cloud-Native architecture: Edge & NVS Security (ESP32/JITP), Decoupled Serverless Ingestion (IoT Rules + SQS/DLQ), Microservices Orchestration (Docker / Kubernetes with Kustomize & ArgoCD), MongoDB Persistence (StatefulSet), and Grafana Observability._
 
 **Architecture & Technical Achievements:**
 
-- **Infrastructure as Code (IaC) & GitOps:** 100% automated and versioned AWS infrastructure using **Terraform (HCL)** (SQS queues, Dead Letter Queues, IoT Core rules, and Least-Privilege IAM policies), remote state locking with **AWS S3 & DynamoDB**, and a **GitHub Actions** CI/CD pipeline running predictive `terraform plan` on PRs and automated `apply` on merge to `main`.
+- **Cloud-Native Orchestration & GitOps (Kubernetes & ArgoCD):** Declarative microservices architecture using **Kustomize**, persistent time-series database running as a `StatefulSet` with Persistent Volume Claims (`PVC`), resilience and health monitoring (`liveness` and `readiness probes`), and automated continuous delivery with **ArgoCD** featuring real-time state synchronization and _Self-Healing_.
+- **Infrastructure as Code (IaC) & CI/CD:** 100% automated and versioned AWS infrastructure using **Terraform (HCL)** (SQS queues, Dead Letter Queues, IoT Core rules, and Least-Privilege IAM policies), remote state locking with **AWS S3 & DynamoDB**, and a **GitHub Actions** CI/CD pipeline running predictive `terraform plan` on PRs and automated `apply` on merge to `main`.
 - **Edge Computing & Zero-Touch Provisioning (JITP):** Modular C++ firmware running on **FreeRTOS** with concurrent tasks for UWB ranging, BLE provisioning/diagnostics, and AWS IoT MQTT client; secure onboarding via **Just-In-Time Provisioning (JITP)** storing X.509 cryptographic certificates and private keys in secure **NVS** memory partitions.
 - **Serverless Cloud Ingestion & Resilience:** Asynchronous message routing using **AWS IoT Rules** decoupled via **AWS SQS** for reliable backend processing; fault-tolerant **Dead Letter Queue (DLQ)** with automated redrive policy preventing data loss.
-- **Microservices Orchestration & Persistence:** Containerized **Node.js** backend consuming SQS via long-polling, formatting time-series data and storing it in **MongoDB** with isolated Docker networks and persistent volumes.
-- **Real-Time Zero-Latency Observability:** Containerized **Grafana** dashboard consuming an engineered custom REST API with query-level `cache-busting` (`?cb=${__to}`) to stream physical distance variations with zero latency.
+- **Real-Time Observability & Dual Deployment:** Flexible runtime support for local development with **Docker Compose** or production clusters in **Kubernetes**; containerized Node.js SQS consumer and **Grafana** dashboard (accessible via `NodePort` or port 3000) consuming a custom REST API with query-level `cache-busting` (`?cb=${__to}`) for zero-latency telemetry.
 
 ---
 

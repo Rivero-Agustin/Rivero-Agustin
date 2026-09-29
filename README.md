@@ -24,9 +24,9 @@ A continuación, presento algunos de los sistemas y arquitecturas en los que he 
 
 ## 🌟 1. Proyecto Open-Source Destacado: Enterprise IoT Provisioning & Telemetry Pipeline
 
-_Tecnologías: ESP32, FreeRTOS, AWS (IoT Core, SQS, DLQ, IAM), Node.js, MongoDB, Docker, Grafana, Terraform (IaC), GitHub Actions (GitOps)_
+_Tecnologías: ESP32, FreeRTOS, AWS (IoT Core, SQS, DLQ, IAM), Kubernetes, ArgoCD, Kustomize, Docker, Node.js, MongoDB, Grafana, Terraform (IaC), GitHub Actions_
 
-Pipeline de telemetría IoT Cloud Native de extremo a extremo: desde la captura de sensores UWB y aprovisionamiento seguro Zero-Touch (JITP) en ESP32, hasta la ingesta desacoplada en AWS (IoT Core Rules, SQS, DLQ), microservicios en Node.js, MongoDB y observabilidad en tiempo real en Grafana con Docker, con infraestructura automatizada mediante Terraform (IaC) y pipeline GitOps en GitHub Actions.
+Pipeline de telemetría IoT Cloud Native de extremo a extremo: desde la captura de sensores UWB y aprovisionamiento seguro Zero-Touch (JITP) en ESP32, hasta la ingesta desacoplada en AWS (IoT Core Rules, SQS, DLQ), orquestación dual mediante contenedores Docker y Kubernetes nativo con GitOps continuo (ArgoCD + Kustomize), microservicios en Node.js, MongoDB (`StatefulSet`) y observabilidad en tiempo real en Grafana, con infraestructura automatizada mediante Terraform (IaC) y CI/CD en GitHub Actions.
 
 Junto con el Gateway IoT Edge en Linux Embebido con IA, este repositorio público funciona como mi **prueba de código** principal, contrastando con el resto de los desarrollos del portfolio que se encuentran bajo acuerdos de confidencialidad corporativa.
 
@@ -42,19 +42,15 @@ Junto con el Gateway IoT Edge en Linux Embebido con IA, este repositorio públic
 >
 > ![Diagrama de Arquitectura](https://github.com/Rivero-Agustin/enterprise-iot-telemetry-pipeline/blob/main/docs/architecture.diagram.png)
 >
-> _👆 Arquitectura en 5 capas: Edge y Seguridad NVS (ESP32/JITP), Ingesta Serverless desacoplada en AWS (IoT Rules + SQS/DLQ), Backend en Node.js, Persistencia en MongoDB y Observabilidad en Grafana._
+> _👆 Arquitectura Cloud-Native en 5 capas: Edge y Seguridad NVS (ESP32/JITP), Ingesta Serverless desacoplada en AWS (IoT Rules + SQS/DLQ), Orquestación de Microservicios (Docker / Kubernetes con Kustomize & ArgoCD), Persistencia en MongoDB (StatefulSet) y Observabilidad en Grafana._
 
 **Arquitectura y Logros Técnicos:**
 
-- **Infraestructura Cloud y Escalabilidad:** Diseño de una arquitectura _Serverless_ en AWS, integrando IoT Core y colas de mensajes (SQS) para garantizar la ingesta masiva de datos sin pérdida de telemetría.
-- **Ciberseguridad y Gestión de Accesos:** Aplicación de buenas prácticas de seguridad en la nube mediante la configuración estricta de políticas y rotación de credenciales con roles IAM.
-- **Orquestación de Microservicios:** Despliegue del backend (Node.js) y bases de datos (MongoDB) utilizando contenedores Docker para asegurar la portabilidad y rápida replicación del entorno.
-- **Integración Edge-to-Cloud:** Conexión robusta del hardware físico (ESP32 operando con FreeRTOS) hacia la nube, cerrando el ciclo completo del dato desde el microcontrolador hasta el dashboard de visualización final.
-- **Infraestructura como Código (IaC) & GitOps:** Despliegue de infraestructura cloud 100% automatizado y versionado mediante **Terraform (HCL)** (SQS, Dead Letter Queues, reglas de IoT Core y políticas IAM bajo Principio de Menor Privilegio), gestión de estado remoto seguro en **AWS S3 con bloqueo DynamoDB**, y pipeline CI/CD en **GitHub Actions** con validación predictiva (`terraform plan`) en Pull Requests y aplicación automática en `main`.
+- **Orquestación Cloud-Native & GitOps (Kubernetes & ArgoCD):** Arquitectura declarativa de microservicios mediante **Kustomize**, base de datos persistente mediante `StatefulSet` en Kubernetes con volúmenes persistentes (`PVC`), sondas de salud y resiliencia (`liveness` y `readiness probes`), y reconciliación continua automatizada con **ArgoCD** sincronizada en tiempo real con _Self-Healing_.
+- **Infraestructura como Código (IaC) & CI/CD:** Despliegue de infraestructura cloud 100% automatizado y versionado mediante **Terraform (HCL)** (SQS, Dead Letter Queues, reglas de IoT Core y políticas IAM bajo Principio de Menor Privilegio), gestión de estado remoto seguro en **AWS S3 con bloqueo DynamoDB**, y pipeline CI/CD en **GitHub Actions** con validación predictiva (`terraform plan`) en Pull Requests y aplicación automática en `main`.
 - **Edge Computing & Zero-Touch Provisioning (JITP):** Firmware modular en C++ bajo **FreeRTOS** con tareas concurrentes para medición UWB, diagnóstico/aprovisionamiento BLE y cliente MQTT hacia AWS IoT; registro seguro de dispositivos mediante **Just-In-Time Provisioning (JITP)** con almacenamiento de claves privadas y certificados X.509 en particiones de memoria segura (**NVS**).
 - **Ingesta Cloud Serverless y Resiliencia:** Enrutamiento asíncrono con **AWS IoT Rules** y desacoplamiento de mensajes mediante **AWS SQS** para procesamiento fiable; tolerancia a fallos mediante **Dead Letter Queue (DLQ)** con política de reenvío automático.
-- **Orquestación de Microservicios y Persistencia:** Backend en **Node.js** contenedorizado consumiendo SQS vía long-polling, formateo de series temporales y almacenamiento en **MongoDB** con aislamiento de red y volúmenes Docker persistentes.
-- **Observabilidad en Tiempo Real:** Dashboard en **Grafana** contenedorizado con integración a una API REST personalizada con ingeniería de `cache-busting` (`?cb=${__to}`) para visualización de telemetría sin latencia.
+- **Observabilidad en Tiempo Real y Despliegue Dual:** Soporte flexible de ejecución local con **Docker Compose** o entornos escalables en **Kubernetes**; microservicio Node.js consumidor de SQS y dashboard en **Grafana** (accesible vía `NodePort` o puerto 3000) con API REST personalizada e ingeniería de `cache-busting` (`?cb=${__to}`) para visualización de telemetría sin latencia.
 
 ---
 
